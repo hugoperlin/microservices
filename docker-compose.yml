@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  acervo:
+    build:
+      context: ./src/acervo
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      MONGO_SERVER: mongodb://root:MongoDB2019!@mongo:27017/acervo
+    networks:
+      - acervo_net
+
+  mongo:
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: MongoDB2019!
+      MONGO_INITDB_DATABASE: acervo
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data/mongo:/data/db
+    networks:
+      - acervo_net
+
+networks:
+  acervo_net:
+    driver: bridge
