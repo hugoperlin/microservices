@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Acervo APP - Livros</title>
+</head>
+<body>
+    <h1>Livros</h1>
+    <form action="/acervo" method="post" enctype="multipart/form-data">
+        <label for="titulo">Título</label>
+        <input type="text" id="titulo" name="titulo"><br>
+        <label for="anoPublicacao">Ano Publicação</label>
+        <input type="number" id="anoPublicacao" name="anoPublicacao"><br>
+        <label for="categoria">Categoria</label>
+        <select id="categoria" name="categoria">
+            <option value="1">Ficção</option>
+            <option value="2">Romance</option>
+            <option value="3">Biografia</option>
+        </select><br>
+        <input type="submit" value="Submit">
+      </form>
+    </form>
+
+    <ul>
+    {% for l in livros %}
+        <li>{{l.titulo}} ({{l.anoPublicacao}}) - {{l.categoria}}</li>
+    {% endfor %}
+    </ul>
+    <a href="/">Voltar</a>
+
+</body>
+</html>
