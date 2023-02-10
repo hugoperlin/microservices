@@ -41,6 +41,22 @@ services:
     environment:
       ACERVO_URL: ${ACERVO_URL}
       USUARIOS_URL: ${USUARIOS_URL}
+      RECOMENDACOES_URL: ${RECOMENDACOES_URL}
+      FLASK_ENV: development
+    networks:
+      - acervo_net
+
+  recomendacoes:
+    build:
+      context: ./src/recomendacoes
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    volumes:
+      - ./src/recomendacoes:/app
+    ports:
+      - "${RECOMENDACOES_PORT}:5000"
+    environment:
+      MONGO_SERVER: ${MONGO_URL}
       FLASK_ENV: development
     networks:
       - acervo_net

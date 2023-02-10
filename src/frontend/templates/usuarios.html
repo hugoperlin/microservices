@@ -18,7 +18,7 @@
 
     <ul>
     {% for u in usuarios %}
-        <li>{{u.nome}} ({{u.email}})</li>
+        <li><a href="/recomenda?idUsuario={{u._id}}"> {{u.nome}}</a> ({{u.email}})</li>
     {% endfor %}
     </ul>
 

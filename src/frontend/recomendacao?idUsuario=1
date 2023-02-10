@@ -1,0 +1,23 @@
+{
+  "idUsuario": "1", 
+  "recomendacoes": [
+    {
+      "_id": "6246eddb3f5a64cca7d77d55", 
+      "anoPublicacao": "2003", 
+      "categoria": "2", 
+      "titulo": "Livro 3"
+    }, 
+    {
+      "_id": "623cee8d5e8481102949e1c6", 
+      "anoPublicacao": "2001", 
+      "categoria": "1", 
+      "titulo": "Livro 1"
+    }, 
+    {
+      "_id": "6246edec3f5a64cca7d77d5b", 
+      "anoPublicacao": "2005", 
+      "categoria": "1", 
+      "titulo": "Livro 5"
+    }
+  ]
+}

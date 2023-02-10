@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Recomendações</title>
+</head>
+<body>
+    
+    <h1>Usuário {{dados.idUsuario}}</h1>
+
+    <ul>
+        {% for l in dados.recomendacoes %}
+            <li>{{l.titulo}} ({{l.anoPublicacao}}) - {{l.categoria}}</li>
+        {% endfor %}
+    </ul>
+    <a href="/">Voltar</a>
+</body>
+</html>
